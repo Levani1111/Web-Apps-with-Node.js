@@ -21,6 +21,13 @@ app.get('/', (req, res) => {
     res.json(data); // Sending the imported data as response
 });
 
+// GET with Routing Parameters
+app.get('/class/:id', (req, res) => {
+    const studentId = Number(req.params.id); // Extracting the id from the URL
+    const student = data.filter((student) => student.id === studentId); // Filtering the data based on the id
+    res.send(student); // Sending the filtered data as response
+});
+
 // Handling POST request at '/create'
 app.post('/create', (req, res) => {
     res.send('This is the POST request at /create');
@@ -39,5 +46,4 @@ app.delete('/delete', (req, res) => {
 // Listening to the specified port for incoming connections
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-    console.log(data); // Logging the imported data
 });
