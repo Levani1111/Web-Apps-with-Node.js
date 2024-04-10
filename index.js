@@ -10,9 +10,15 @@ const app = express();
 // Defining the port number
 const PORT = 3000;
 
+// Using the public folder at the root of the project as static folder
+app.use(express.static('public'));
+
+// Using images folder at the route /images as static folder
+app.use('/images', express.static('images'));
+
 // Handling GET request at '/'
 app.get('/', (req, res) => {
-    res.send('This is the GET request at /');
+    res.json(data); // Sending the imported data as response
 });
 
 // Handling POST request at '/create'
