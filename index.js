@@ -16,9 +16,21 @@ app.use(express.static("public"));
 // Using images folder at the route /images as static folder
 app.use("/images", express.static("images"));
 
+// Using the built-in express.json() middleware and express.urlencoded() to parse URL-encoded data
+
+app.use(express.json()); // Middleware to parse JSON data
+
+app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded data
+
 // Handling GET request at '/'
 app.get("/", (req, res) => {
     res.json(data); // Sending the imported data as response
+});
+
+// POST express.json() middleware and express.urlencoded() middleware
+app.post("/item", (req, res) => {
+    console.log(req.body); // Logging the parsed data
+    res.send(req.body); // Sending the parsed data as response
 });
 
 // GET  download method
