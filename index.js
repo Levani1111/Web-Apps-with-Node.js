@@ -21,6 +21,16 @@ app.get("/", (req, res) => {
     res.json(data); // Sending the imported data as response
 });
 
+// GET  download method
+app.get("/download", (req, res) => {
+    res.download("images/ai-generated.jpg"); // Sending the file as response
+});
+
+// GET redirect method
+app.get("/redirect", (req, res) => {
+    res.redirect("https://levanipapashvili.com/"); // Redirecting to the root URL
+});
+
 // Handling GET with next() function
 app.get(
     "/next",
