@@ -24,10 +24,6 @@ This project is a simple example of how to generate server-side code with Expres
 - Debug Express applications
 - Integrate Express with various databases
 
-### License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details.
-
 ### Acknowledgements
 
 This project was inspired by the [Express.js documentation](https://expressjs.com/).
