@@ -17,9 +17,7 @@ app.use(express.static("public"));
 app.use("/images", express.static("images"));
 
 // Using the built-in express.json() middleware and express.urlencoded() to parse URL-encoded data
-
 app.use(express.json()); // Middleware to parse JSON data
-
 app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded data
 
 // Handling GET request at '/'
@@ -48,6 +46,7 @@ app.route("/class")
     // Handling GET request at "/class"
     .get((req, res) => {
         res.send("This is the GET request at /class");
+        // throw new Error("This is an error"); // Throwing an error
     })
     // Handling POST request at "/class"
     .post((req, res) => {
@@ -95,6 +94,12 @@ app.put("/edit", (req, res) => {
 // Handling DELETE request at '/delete'
 app.delete("/delete", (req, res) => {
     res.send("This is the DELETE request at /delete");
+});
+
+// Coustom Error Handling Middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send("Something broke!");
 });
 
 // Listening to the specified port for incoming connections
