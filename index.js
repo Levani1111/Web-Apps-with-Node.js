@@ -31,6 +31,26 @@ app.get("/redirect", (req, res) => {
     res.redirect("https://levanipapashvili.com/"); // Redirecting to the root URL
 });
 
+// Define route "/class" to handle multiple HTTP methods
+app.route("/class")
+    // Handling GET request at "/class"
+    .get((req, res) => {
+        res.send("This is the GET request at /class");
+    })
+    // Handling POST request at "/class"
+    .post((req, res) => {
+        res.send("This is the POST request at /class");
+    })
+    // Handling PUT request at "/class"
+    .put((req, res) => {
+        res.send("This is the PUT request at /class");
+    })
+    // Handling DELETE request at "/class"
+    .delete((req, res) => {
+        res.send("This is the DELETE request at /class");
+    });
+
+
 // Handling GET with next() function
 app.get(
     "/next",
