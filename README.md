@@ -1,5 +1,9 @@
 ## Node.js Generate server-side code with Express
 
+### Description
+
+This project aimed at developing robust web applications using the Express framework in Node.js. It focuses on leveraging Express, a flexible and minimalist framework, to create powerful websites and web applications efficiently. The project emphasizes the importance of building services that are scalable, maintainable, and efficient in the dynamic field of web development. By utilizing Express, developers can streamline the process of building web applications and APIs, making it quick and straightforward to develop modern web solutions.
+
 ### Installation
 
 To run this project locally, follow these steps:
